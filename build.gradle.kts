@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.compiler)
 }
 
 group = "com.brunoshiroma"
@@ -16,7 +16,7 @@ repositories {
 
 kotlin {
     @OptIn(ExperimentalWasmDsl::class)
-    wasmJs() {
+    wasmJs {
         binaries.executable()
         moduleName = "kotlin-wasm-poc"
         browser {
@@ -48,7 +48,7 @@ kotlin {
         }
     }
     dependencies {
-        commonMainImplementation(npm("webpack-dev-middleware", "5.3.4"))
+        commonMainImplementation(npm("webpack-dev-middleware", "7.4.2"))
     }
 }
 
