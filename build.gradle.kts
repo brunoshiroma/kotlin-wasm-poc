@@ -1,4 +1,5 @@
-import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+@file:OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
+
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
@@ -15,10 +16,10 @@ repositories {
 }
 
 kotlin {
-    @OptIn(ExperimentalWasmDsl::class)
+    @OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
     wasmJs {
         binaries.executable()
-        moduleName = "kotlin-wasm-poc"
+        outputModuleName = "kotlin-wasm-poc"
         browser {
             testTask {
                 useKarma {
@@ -48,10 +49,7 @@ kotlin {
         }
     }
     dependencies {
-        commonMainImplementation(npm("webpack-dev-middleware", "7.4.2"))
+        commonMainImplementation(npm("webpack-dev-middleware", "7.4.5"))
+        commonMainImplementation(npm("node-forge", "1.3.2"))
     }
-}
-
-compose.experimental {
-    web.application {}
 }
