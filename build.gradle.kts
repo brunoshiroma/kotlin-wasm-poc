@@ -46,9 +46,22 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
         }
+        val wasmJsMain by getting {
+            dependencies {
+                implementation(npm("body-parser", "1.20.3"))
+                implementation(npm("ws", "8.17.1"))
+                implementation(npm("node-forge", "1.3.2"))
+                implementation(npm("http-proxy-middleware", "2.0.7"))
+
+            }
+        }
     }
     dependencies {
+<<<<<<< Updated upstream
         commonMainImplementation(npm("webpack-dev-middleware", "7.4.2"))
+=======
+        commonMainImplementation(npm("webpack-dev-middleware", "7.4.5"))
+>>>>>>> Stashed changes
     }
 }
 
