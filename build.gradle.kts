@@ -49,10 +49,10 @@ kotlin {
         }
         val wasmJsMain by getting {
             dependencies {
-                implementation(npm("body-parser", "1.20.3"))
-                implementation(npm("ws", "8.17.1"))
-                implementation(npm("node-forge", "1.3.2"))
-                implementation(npm("http-proxy-middleware", "2.0.7"))
+                implementation(npm("body-parser", "1.20.6"))
+                implementation(npm("ws", "8.21.2"))
+                implementation(npm("node-forge", "1.4.0"))
+                implementation(npm("http-proxy-middleware", "2.0.10"))
 
             }
         }
