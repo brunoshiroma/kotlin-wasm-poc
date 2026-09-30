@@ -53,11 +53,8 @@ kotlin {
                 implementation(npm("ws", "8.21.2"))
                 implementation(npm("node-forge", "1.4.0"))
                 implementation(npm("http-proxy-middleware", "2.0.10"))
-
+                implementation(npm("webpack-dev-middleware", "7.4.5"))
             }
         }
-    }
-    dependencies {
-        commonMainImplementation(npm("webpack-dev-middleware", "7.4.5"))
     }
 }
